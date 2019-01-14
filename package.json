@@ -10,8 +10,13 @@
     "jsonrpc",
     "json-rpc",
     "stdio",
-    "RFC-4627"
+    "RFC-4627",
+    "cli"
   ],
+  "repository": {
+    "type": "vcs",
+    "url": "https://github.com/nombrekeff/json-rpiecy"
+  },
   "types": "index.d.ts",
   "author": "nombrekeff",
   "license": "MIT",
