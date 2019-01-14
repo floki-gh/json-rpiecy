@@ -17,6 +17,9 @@
 [dependencies-badge]: https://img.shields.io/david/nombrekeff/json-rpiecy.svg?style=flat-square
 [dependencies-link]: https://david-dm.org/nombrekeff/json-rpiecy?view=tree
 
+[vulnerabilities-badge]: https://snyk.io/test/npm/loggin-js/badge.svg?style=flat-square
+[vulnerabilities-link]: https://snyk.io/test/npm/loggin-js
+
 # 📫 rpiecy - JSON-RPC 
 
 [![NPM version][npm-image]][npm-url]
