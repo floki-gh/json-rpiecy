@@ -5,13 +5,10 @@
 [npm-image]: https://img.shields.io/npm/v/json-rpiecy.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/json-rpiecy
 
-[travis-image]: https://img.shields.io/travis/nombrekeff/json-rpiecy.svg?style=flat-square
-[travis-url]: https://travis-ci.org/nombrekeff/json-rpiecy
-
 [code-quality-badge]: http://npm.packagequality.com/shield/json-rpiecy.svg?style=flat-square
 [code-quality-link]: https://packagequality.com/#?package=json-rpiecy
 
-[downloads-badge]: https://img.shields.io/npm/dt/json-rpiecy.svg?style=flat-square
+[downloads-badge]: https://img.shields.io/npm/dm/json-rpiecy.svg?style=flat-square
 [downloads-link]: https://www.npmjs.com/package/json-rpiecy
 
 [dependencies-badge]: https://img.shields.io/david/nombrekeff/json-rpiecy.svg?style=flat-square
@@ -24,7 +21,6 @@
 
 [![NPM version][npm-image]][npm-url]
 [![NPM quality][code-quality-badge]][code-quality-link]
-[![build status][travis-image]][travis-url]
 [![Downloads][downloads-badge]][downloads-link]
 [![Dependencies][dependencies-badge]][dependencies-link]
 [![Known Vulnerabilities][vulnerabilities-badge]][vulnerabilities-link]
