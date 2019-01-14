@@ -1,4 +1,4 @@
-# rpiecy - json-rpc v2 standard lib
+# 📫 rpiecy - JSON-RPC 
 rpiecy is a lightweighted lib for managing [JSON-RPC](specifications.md) [objects][objects] and [comunication][comunication].
 
 
