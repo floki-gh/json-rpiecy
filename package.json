@@ -1,6 +1,6 @@
 {
   "name": "json-rpiecy",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "rpiecy is a lightweighted lib for managing JSON-RPC calls",
   "main": "lib/rpiecy.js",
   "scripts": {
