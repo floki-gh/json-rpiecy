@@ -17,36 +17,39 @@
 [vulnerabilities-badge]: https://snyk.io/test/npm/loggin-js/badge.svg?style=flat-square
 [vulnerabilities-link]: https://snyk.io/test/npm/loggin-js
 
-# 📫 rpiecy - JSON-RPC 
+# 📫 rpiecy - JSON-RPC <!-- omit in toc -->
 
 [![NPM version][npm-image]][npm-url]
-[![NPM quality][code-quality-badge]][code-quality-link]
 [![Downloads][downloads-badge]][downloads-link]
+[![](https://img.shields.io/bundlephobia/min/json-rpiecy.svg?style=flat-square)]()  
 [![Dependencies][dependencies-badge]][dependencies-link]
 [![Known Vulnerabilities][vulnerabilities-badge]][vulnerabilities-link]
+[![NPM quality][code-quality-badge]][code-quality-link]
 
 Rpiecy is a lightweighted lib for managing [JSON-RPC](specifications.md) [objects][objects] and [comunication][comunication].
 
+### Features <!-- omit in toc -->
+* ✔︎ Easy 
+* ✔︎ Customizable
+* ✔︎ Liteweighted 
 
-## Table Of Content
-- [📫 rpiecy - JSON-RPC](#%F0%9F%93%AB-rpiecy---json-rpc)
-  - [Table Of Content](#table-of-content)
-  - [Installing](#installing)
-  - [Usage](#usage)
-    - [Require](#require)
-    - [ES6 Import](#es6-import)
-  - [Api](#api)
-    - [Methods](#methods)
-      - [rpiecy.createRequest()](#rpiecycreaterequest)
-      - [rpiecy.createResponse()](#rpiecycreateresponse)
-      - [rpiecy.parse()](#rpiecyparse)
-      - [rpiecy.listen(callback)](#rpiecylistencallback)
-    - [Classes](#classes)
-      - [rpiecy.Request](#rpiecyrequest)
-      - [rpiecy.Notification](#rpiecynotification)
-      - [rpiecy.Response](#rpiecyresponse)
-      - [rpiecy.RpcError](#rpiecyrpcerror)
-  - [Examples](#examples)
+## Table Of Content <!-- omit in toc -->
+- [Installing](#installing)
+- [Usage](#usage)
+  - [Require](#require)
+  - [ES6 Import](#es6-import)
+- [Api](#api)
+  - [Methods](#methods)
+    - [rpiecy.createRequest()](#rpiecycreaterequest)
+    - [rpiecy.createResponse()](#rpiecycreateresponse)
+    - [rpiecy.parse()](#rpiecyparse)
+    - [rpiecy.listen(callback)](#rpiecylistencallback)
+  - [Classes](#classes)
+    - [rpiecy.Request](#rpiecyrequest)
+    - [rpiecy.Notification](#rpiecynotification)
+    - [rpiecy.Response](#rpiecyresponse)
+    - [rpiecy.RpcError](#rpiecyrpcerror)
+- [Examples](#examples)
 
 
 ## Installing
