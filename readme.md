@@ -50,13 +50,13 @@ Rpiecy is a lightweighted lib for managing [JSON-RPC](specifications.md) [object
 
 
 ## Installing
-The easiest way of installing is using the npm package:
+The easiest way of installing is using npm:
 ```
 $ npm i json-rpiecy -s
 ```
 Or using yarn:
 ```
-$ yarn install json-rpiecy
+$ yarn add json-rpiecy
 ```
 
 ## Usage
