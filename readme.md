@@ -31,6 +31,10 @@ Rpiecy is a lightweighted lib for managing [JSON-RPC](specifications.md) [object
 ## Table Of Content
 - [📫 rpiecy - JSON-RPC](#%F0%9F%93%AB-rpiecy---json-rpc)
   - [Table Of Content](#table-of-content)
+  - [Installing](#installing)
+  - [Usage](#usage)
+    - [Require](#require)
+    - [ES6 Import](#es6-import)
   - [Api](#api)
     - [Methods](#methods)
       - [rpiecy.createRequest()](#rpiecycreaterequest)
@@ -38,11 +42,35 @@ Rpiecy is a lightweighted lib for managing [JSON-RPC](specifications.md) [object
       - [rpiecy.parse()](#rpiecyparse)
       - [rpiecy.listen(callback)](#rpiecylistencallback)
     - [Classes](#classes)
-      - [Request](#request)
-      - [Notification](#notification)
-      - [Response](#response)
-      - [RpcError](#rpcerror)
+      - [rpiecy.Request](#rpiecyrequest)
+      - [rpiecy.Notification](#rpiecynotification)
+      - [rpiecy.Response](#rpiecyresponse)
+      - [rpiecy.RpcError](#rpiecyrpcerror)
   - [Examples](#examples)
+
+
+## Installing
+The easiest way of installing is using the npm package:
+```
+$ npm i json-rpiecy -s
+```
+Or using yarn:
+```
+$ yarn install json-rpiecy
+```
+
+## Usage
+### Require
+Using node require:
+```js
+const rpiecy = require('json-rpiecy');
+```
+
+### ES6 Import
+Using es6 imports:
+```js
+import * as rpiecy from 'json-rpiecy';
+```
 
 ## Api
 ### Methods
@@ -88,8 +116,8 @@ Signature:
 
 
 ### Classes
-#### Request
-A rpc call is represented by a Request object to a Server.
+#### rpiecy.Request
+A rpc call is represented by a **Request** object.
 
 Signature:
   * `rpiecy.Request(method, params?, id?)`
@@ -103,10 +131,17 @@ Signature:
     * **object.params?** - `object | array`
     * **object.id?** - `string | number | null`
 
-#### Notification
+Methods:
+  * `.response(result: object): Response<result>` - creates a **Response** object for this request  
+  * `.error(message: string, code: number, data?:any): Response<error>` - creates an **Response** with error for this request
+  * `.error(error?: object): Response<error>` - overload for accepting an object as first argument
+  * `.matches(method: string): boolean` - Check if request matches method
+  * `.sendAndAwait(): Promise<Response>` - Sends a request to set output channel, and awaits the response
+
+#### rpiecy.Notification
 A Notification is a Request object without an "id" member. A Request object that is a Notification signifies the Client's lack of interest in the corresponding Response object, and as such no Response object needs to be returned to the client. The Server **MUST NOT** reply to a Notification, including those that are within a batch request.
 
-#### Response
+#### rpiecy.Response
 When a rpc call is made, the Server **MUST** reply with a **Response**, except for in the case of Notifications. 
 
 Signature:
@@ -123,8 +158,9 @@ Signature:
     * **object.error?** - `object | array`
     * **object.id?** - `string | number | null`
 
-#### RpcError
+#### rpiecy.RpcError
 When a rpc call encounters an error, the Response Object **MUST** contain the **error** member with a value that is a **RpcError**:
+
 Signature:
   * `rpiecy.RpcError(message, code, data?)`
     * **message** - `string`
@@ -136,6 +172,13 @@ Signature:
     * **object.code** - `number`
     * **object.data?** - `object | array`
 
+Static Constants:
+  * `Error.INTERNAL_ERROR` = **-32603**
+  * `Error.INVALID_PARAMS` = **-32602**
+  * `Error.METHOD_NOT_FOUND` = **-32601**
+  * `Error.INVALID_REQUEST` = **-32600**
+  * `Error.PARSE_ERROR` = **-32700**
+  * `Error.TIMED_OUT` = **-32001**
 
 ## Examples
 ```js
@@ -154,7 +197,6 @@ response2.output();
 
 const parsed = rpiecy.parse('{"method": "method", "id": "id", "jsonrpc": "2.0"}');
 
-
 request1.sendAndAwait()
   .then(response => {
     console.log(`Response for ${request.id}: `, response);
@@ -162,6 +204,7 @@ request1.sendAndAwait()
 
 rpiecy.listen((request) => {
   console.log(`Received request ${request.id}: `, request);
+  request.response({ data: SOME_DATA }).output();
 });
 
 ```
